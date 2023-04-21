@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notification_demo/notification/core/notification_helper.dart';
 
 Future<void> main() async {
+  runApp(const MyApp());
   // needed if you intend to initialize in the `main` function
   WidgetsFlutterBinding.ensureInitialized();
   final result = await NotificationHelper.requestPermission();
@@ -9,8 +10,6 @@ Future<void> main() async {
   if (result ?? false) {
     await NotificationHelper.init();
   }
-
-  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
